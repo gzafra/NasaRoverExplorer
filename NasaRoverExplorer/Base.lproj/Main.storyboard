@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZ2-6l-wRW">
+                                <rect key="frame" x="150" y="110" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="rk7-a8-kqH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="s49-mH-vMH"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-Zo-Dgz">
+                                <rect key="frame" x="277" y="158" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="nQv-sK-nWp"/>
+                                </constraints>
+                                <state key="normal" title="Run!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="runButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fyZ-iQ-MPc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMi-aT-OPr" customClass="SKView">
+                                <rect key="frame" x="150" y="260" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="TK9-Nw-5ib"/>
+                                    <constraint firstAttribute="width" constant="300" id="aAt-fS-yzB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dZ2-6l-wRW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="8Gk-sd-npU"/>
+                            <constraint firstItem="LMi-aT-OPr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="196" id="F5Q-1V-4WA"/>
+                            <constraint firstItem="dZ2-6l-wRW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="IoU-FC-C35"/>
+                            <constraint firstAttribute="centerX" secondItem="B3S-Zo-Dgz" secondAttribute="centerX" id="Mav-Dz-09K"/>
+                            <constraint firstItem="LMi-aT-OPr" firstAttribute="leading" secondItem="dZ2-6l-wRW" secondAttribute="leading" id="SAE-0U-BT3"/>
+                            <constraint firstItem="B3S-Zo-Dgz" firstAttribute="top" secondItem="dZ2-6l-wRW" secondAttribute="bottom" constant="18" id="XWE-dB-oS7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B3S-Zo-Dgz" secondAttribute="bottom" constant="477" id="hQ1-qZ-tOd"/>
+                            <constraint firstAttribute="bottom" secondItem="LMi-aT-OPr" secondAttribute="bottom" constant="40" id="jg3-gc-csv"/>
+                            <constraint firstAttribute="centerX" secondItem="LMi-aT-OPr" secondAttribute="centerX" id="mMu-4d-j6c"/>
+                            <constraint firstAttribute="centerX" secondItem="dZ2-6l-wRW" secondAttribute="centerX" id="r8K-CA-uhq"/>
+                            <constraint firstItem="B3S-Zo-Dgz" firstAttribute="top" secondItem="dZ2-6l-wRW" secondAttribute="bottom" constant="18" id="zx6-bW-K5y"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Gk-sd-npU"/>
+                                <exclude reference="F5Q-1V-4WA"/>
+                                <exclude reference="XWE-dB-oS7"/>
+                                <exclude reference="hQ1-qZ-tOd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="inputButton" destination="B3S-Zo-Dgz" id="lPt-Ra-ts9"/>
+                        <outlet property="inputTxt" destination="dZ2-6l-wRW" id="w2l-4f-Kna"/>
+                        <outlet property="skView" destination="LMi-aT-OPr" id="dSv-1c-s34"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
